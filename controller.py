@@ -2,9 +2,8 @@ import rospy
 import goAhead
 import turnLeft
 import turnRight
-import stopMoviment
-import degreToMeters
 import stopMovement
+import degreToMeters
 import evaluateStop
 
 from std_msgs.msg import Int16
@@ -44,7 +43,7 @@ def callbackWalk(data):
     turnRight.turnRight()
   elif command[0] == 'stop':
     state = 'stop'
-    stopMoviment.stopMoviment()
+    stopMovement.stopMovement()
 
 def listener():
   rospy.Subscriber("left_sensor", Int16, callbackLeft)
