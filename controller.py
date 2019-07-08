@@ -32,7 +32,7 @@ def callbackWalk(data):
   if command[0] == 'goAhead':
     state = 'goAhead'
     distance = float(command[1])
-    goAhead.goAhead()
+    goAhead.goAhead(int(command[2]))
   elif command[0] == 'turnLeft':
     state = 'turnLeft'
     distance = degreToMeters.degreToMeters(float(command[1]))

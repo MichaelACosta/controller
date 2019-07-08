@@ -8,7 +8,7 @@ O arquivo controller.py é responsavel por receber os valores do ROS comunicar c
 
 As publicações dos comandos são feitas no canal walk em formato de string.
 
-Para um Go Ahead é passado por exemplo a string 'goAhead 1', onde goAhead é o comando e 1 o valor em metros.
+Para um Go Ahead é passado por exemplo a string 'goAhead 1 175', onde goAhead é o comando, 1 é o valor em metros e 175 é o valor a ser passado para o PWM.
 Para um Turn Left é passado por exemplo a string 'turnLeft 90', onde turnLeft é o comando e 90 o valor em graus.
 Para um Turn Right é passado por exemplo a string 'turnRight 30', onde turnRight é o comando e 30 o valor em graus.
 
@@ -24,7 +24,8 @@ Para movimentar 360 graus deve ser movimentada 3,39292cm uma das rodas, este val
 ### Go Ahead
 
 Será zerado o contador interno do arduino para iniciar o movimento para frente, para isto será publicado um true no canal pattern.
-Publicando o valor 175 no channel_y você obtera o movimento para frente.
+Publicando o valor passado como parametro, pwmValue, no channel_y você obterá o movimento para frente.
+Para garantir que o comando movimente o Theta para frente, é feito um controle que não permite valores abaixo de 175 nem acima de 205.
 Os canais left_sensor e right_sensor obtém a contagem de pulsos obtidas no odômetro pelo arduino.
 O comando go ahead movimento o Theta por 1 metro, assim obtendo 300 pulsos nos dois canais de odometria.
 
