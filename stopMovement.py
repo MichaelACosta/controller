@@ -2,7 +2,7 @@ import rospy
 from std_msgs.msg import Int16
 from std_msgs.msg import Bool
 
-def stopMoviment():
+def stopMovement():
   try:
     stop()
   except rospy.ROSInnterruptException:

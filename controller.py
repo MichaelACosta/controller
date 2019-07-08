@@ -2,7 +2,7 @@ import rospy
 import goAhead
 import turnLeft
 import turnRight
-import stopMoviment
+import stopMovement
 
 from std_msgs.msg import Int16
 from std_msgs.msg import Bool
@@ -36,7 +36,7 @@ def callbackWalk(data):
     turnRight.turnRight()
   elif data.data == 'stop':
     state = 'stop'
-    stopMoviment.stopMoviment()
+    stopMovement.stopMovement()
 
 def stopGoAhead(value, distance):
   global circumference
@@ -52,13 +52,13 @@ def evaluateStop():
 
   if state == 'firstStop':
     state = 'stop'
-    stopMoviment.stopMoviment()
+    stopMovement.stopMovement()
   elif state == 'turnRight' and stopTurn(leftValue):
-    stopMoviment.stopMoviment()
+    stopMovement.stopMovement()
   elif state == 'turnLeft' and stopTurn(rightValue):
-  	stopMoviment.stopMoviment()
+  	stopMovement.stopMovement()
   elif state == 'goAhead' and (stopGoAhead(rightValue, 1.0) or stopGoAhead(leftValue, 1.0)):
-    stopMoviment.stopMoviment()
+    stopMovement.stopMovement()
 
 def listener():
   rospy.Subscriber("left_sensor", Int16, callbackLeft)
