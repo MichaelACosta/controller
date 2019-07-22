@@ -51,7 +51,7 @@ Para o arduino controlar o momento de parar o movimento o valor convertido em me
 
 Para converter o valor de graus para metros é utilizado o valor da circunferência percorrida pelo Theta em uma volta de 360 graus.
 Considerando o diametro de 0,54m para rotacionar 360 graus será percorrido 1,69646003m em torno de uma das rodas.
-Portanto, o calculo (1,6964\*degre)/360, sendo degre o valor em graus para rotacionar, indica o valor em metros a ser percorrido.
+Portanto, o calculo (1,6964\*degree)/360, sendo degree o valor em graus para rotacionar, indica o valor em metros a ser percorrido.
 
 ### Conversão de metros para pulsos
 

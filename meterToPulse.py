@@ -1,3 +1,3 @@
 def meterToPulse(distance):
-  circunference = 3.14*0.34
-  return (distance/circunference)*1200
+  circumference = 3.14*0.34
+  return (distance/circumference)*1200.0
